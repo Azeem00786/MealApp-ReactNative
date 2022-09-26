@@ -1,0 +1,5 @@
+  workflows:
+  workflow-name:Meal App workflow
+    environment:
+      groups:
+        - mealapp
