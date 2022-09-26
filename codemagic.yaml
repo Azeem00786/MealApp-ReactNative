@@ -1,5 +1,7 @@
   workflows:
-  workflow-name:Meal App workflow
+  my-workflow:
+    name: Meal Workflow
     environment:
-      groups:
-        - mealapp
+  groups:             # Define your environment variables groups here
+    - mealapp
+  
