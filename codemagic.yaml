@@ -6,6 +6,6 @@ workflows:
     max_build_duration: 60
     environment:
       groups:
-        - meal app
+        - mealapp
       vars:
         app_name: "value here"
