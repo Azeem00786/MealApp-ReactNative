@@ -1,7 +1,11 @@
-  workflows:
+workflows:
   my-workflow:
-    name: Meal Workflow
+    name: Meal App
+    
+    instance_type: mac_mini
+    max_build_duration: 60
     environment:
-  groups:             # Define your environment variables groups here
-    - mealapp
-  
+      groups:
+        - meal app
+      vars:
+        app_name: "value here"
