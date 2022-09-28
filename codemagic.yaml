@@ -44,7 +44,7 @@ workflows:
           # else
           #     UPDATED_BUILD_NUMBER=$(($LATEST_GOOGLE_PLAY_BUILD_NUMBER + 1))
           # fi
-          cd android && chmod +x ./gradlew bundleRelease -PversionCode=1 -PversionName=1.0.0
+          cd android && chmod +x ./gradlew -PversionCode=${BUILD_NUMBER} -PversionName=${VERSION_NUMBER} asssemblrRelease
     artifacts:
       - android/app/build/outputs/**/*.aab
     publishing:
