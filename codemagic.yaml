@@ -50,7 +50,8 @@ workflows:
     publishing:
       email:
         recipients:
-          -azeemmohammad377@gmail.com
+          - azeemmohammad377@gmail.com
+          - apps@hyperzod.com
           
         notify:
           success: true
