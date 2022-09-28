@@ -19,8 +19,8 @@ export const MealDetailScreen = (props) => {
   return (
     <ScrollView>
       {/* {console.log(selectedMeal.imageUrl)} */}
-      < ImageBackground  source={{ uri: selectedMeal.imageUrl }} style={styles.image} >
-      {/* <View style={styles.titleContiner}>
+      < ImageBackground source={{ uri: selectedMeal.imageUrl }} style={styles.image} >
+        {/* <View style={styles.titleContiner}>
                             <Text style={styles.title}>azeem</Text>
                             </View> */}
       </ImageBackground>
@@ -36,11 +36,7 @@ export const MealDetailScreen = (props) => {
             <Text key={ingItem} style={styles.ingredientsItem}>{ingItem}</Text>
           )
         })}
-      
-
-      <Text style={styles.title}>Steps</Text>
-
-      
+        <Text style={styles.title}>Steps</Text>
         {selectedMeal.steps.map(steps => {
           return (
             <Text key={steps} style={styles.ingredientsItem}>{steps}</Text>
@@ -48,14 +44,7 @@ export const MealDetailScreen = (props) => {
         })}
       </View>
     </ScrollView>
-    // <View style={styles.screen}>
-    //     <Text>
-    //     {selectedMeal.title}
-    //     </Text>
-    //     <Button title='Back to parent page!' onPress={()=>{
-    //       props.navigation.popToTop()
-    //     }}/>
-    // </View>
+
   )
 }
 MealDetailScreen.navigationOptions = navigationData => {
@@ -86,7 +75,7 @@ const styles = StyleSheet.create({
 
   },
   mealDetail: {
-    padding:10,
+    padding: 10,
     justifyContent: 'space-between',
     alignItems: 'center',
 
@@ -94,18 +83,18 @@ const styles = StyleSheet.create({
   title: {
     textAlign: 'center',
     fontSize: 22,
-    padding:8
+    padding: 8
   },
-  ingredientsItem:{
-    marginVertical:10,
+  ingredientsItem: {
+    marginVertical: 10,
     // textAlign:'center',
-    marginHorizontal:10,
-    borderWidth:2,
-    padding:8,
-    borderRadius:2,
-    borderColor:'black',
-    backgroundColor:'#FDE6FF'
-    
+    marginHorizontal: 10,
+    borderWidth: 2,
+    padding: 8,
+    borderRadius: 2,
+    borderColor: 'black',
+    backgroundColor: '#FDE6FF'
+
   }
 })
 export default MealDetailScreen;
