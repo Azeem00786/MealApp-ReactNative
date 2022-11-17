@@ -18,7 +18,7 @@ const fetchFonts = ()=>{
 
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false)
-  
+  console.log('hello')
   // useEffect(()=>{
   //   (async()=>await Font.loadAsync({
   //     'open-sans':require('./assets/fonts/OpenSans-Regular.ttf'),
