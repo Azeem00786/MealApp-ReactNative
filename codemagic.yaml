@@ -48,7 +48,7 @@ workflows:
           chmod +x gradlew
           ./gradlew clean && ./gradlew assembleRelease -x bundleReleaseJsAndAssets
     artifacts:
-      - android/app/build/outputs/**/*.apk
+      - android/app/build/outputs/**/*.aab
     publishing:
       email:
         recipients:
