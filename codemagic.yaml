@@ -44,11 +44,14 @@ workflows:
           # else
           #     UPDATED_BUILD_NUMBER=$(($LATEST_GOOGLE_PLAY_BUILD_NUMBER + 1))
           # fi
+          
+          react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+
           cd android  
           chmod +x gradlew
-          ./gradlew clean && ./gradlew assembleRelease -x bundleReleaseJsAndAssets
+          ./gradlew clean && ./gradlew assembleRelease
     artifacts:
-      - android/app/build/outputs/**/*.aab
+      - android/app/build/outputs/**/*.apk
     publishing:
       email:
         recipients:
