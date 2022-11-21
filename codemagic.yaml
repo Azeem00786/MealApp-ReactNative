@@ -27,7 +27,7 @@ workflows:
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
       - name: Install npm dependencies
         script: | 
-          npm install --legacy-peer-deps
+          npm install
       # - name: Install Expo CLI and eject
       #   script: | 
       #     npm install -g expo-cli
@@ -46,7 +46,7 @@ workflows:
           # fi
           cd android  
           chmod +x gradlew
-          ./gradlew asssemblrRelease
+          ./gradlew clean && ./gradlew assembleRelease
     artifacts:
       - android/app/build/outputs/**/*.aab
     publishing:
