@@ -38,8 +38,8 @@ workflows:
       
           
          # react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
-
-          
+WEBHOOKURL=${API_URL}
+      curl -H 'Content-Type: application/json' -d '{"tenant_id": "'"2222"'","status": "success","build_id": "'"5126312314"'","output_url": "'"www.onlinekaka.com"'"}' "$API_URL")  
     artifacts:
       - android/app/build/outputs/**/*.apk
     publishing:
