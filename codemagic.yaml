@@ -35,15 +35,7 @@ workflows:
       # - name: Set up app/build.gradle
       #   script: | 
       #     mv ./support-files/build.gradle android/app
-      - name: Build Android release
-        script: | 
-          # LATEST_GOOGLE_PLAY_BUILD_NUMBER=$(google-play get-latest-build-number --package-name '$PACKAGE_NAME')
-          # if [ -z LATEST_BUILD_NUMBER ]; then
-          #     # fallback in case no build number was found from google play. Alternatively, you can `exit 1` to fail the build
-          #     UPDATED_BUILD_NUMBER=$BUILD_NUMBER
-          # else
-          #     UPDATED_BUILD_NUMBER=$(($LATEST_GOOGLE_PLAY_BUILD_NUMBER + 1))
-          # fi
+      
           
          # react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
 
@@ -56,18 +48,7 @@ workflows:
           - azeemmohammad377@gmail.com
           - apps@hyperzod.com
           
-scripts:
-              - name: Publish test
-                script: |
-                 echo "$CM_EXPORT_DIR"
-                  responseFileUrl=$("arything.com")
-                  echo "responseFileUrl -> ${responseFileUrl}" 
-                 
-                  echo "APP_BUILD_ID -> ${APP_BUILD_ID}"
-                  echo "API_URL -> ${API_URL}"
-                  response=$(curl --insecure -XPOST -H -H "Content-type: application/json" -d '{"status": "success","build_id": "'"$APP_BUILD_ID"'","output_url": "'"$responseFileUrl"'"}' "$API_URL")
-                  #response=$(curl --insecure -XPOST -H x-tenant:1005 -H Content-type:application/json -d '{tenant_id:1005,status:success,build_id: "6310df19428fddd8fd01da23,output_url:"$CM_EXPORT_DIR"}' "https://api.hyperzod.app/admin/v1/app-build/webhook/build?apikey=qgIV9cwIP57aDwmd_afoN-YzDPXiARwycPp6qUJ6-8XvylISzSOhcHSy3BeET3P_T1QIiiZGxg==")
-                  echo "$response" 
+             
 
         notify:
           success: true
