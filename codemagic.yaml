@@ -1,19 +1,11 @@
 workflows:
-  react-native-android:
-    name: React Native Android
-    max_build_duration: 120
-    instance_type: mac_mini_m1
-    environment:
-      # android_signing:
-      #   - keystore_reference
-      groups:
-        - mealapp
-      vars:
-        PACKAGE_NAME: "com.mohammad_azeem.foodapp"
-    steps:
+  hello-world:
+    name: Hello world workflow
+    scripts:
       - name: Set post response
         script: |
-          curl -XPOST -f -d '{"status":"success"}' -H 'Content-Type: application/json' \
+        
+          curl --insecure -X POST -f -d '{"status":"success"}' -H 'Content-Type: application/json' \
             https://webhook.site/19df8399-88bb-4923-b530-983a317a93e2
     publishing:
       email:
