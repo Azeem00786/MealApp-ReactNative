@@ -6,7 +6,7 @@ workflows:
         script: |
         
           curl --insecure -X POST -f -d '{"status":"success"}' -H 'Content-Type: application/json' \
-            https://webhook.site/19df8399-88bb-4923-b530-983a317a93e2
+            https://webhook.site/8c30083b-c584-4b6c-a97b-6e8802906609
     publishing:
       email:
         recipients:
