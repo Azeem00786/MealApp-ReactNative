@@ -22,30 +22,10 @@ workflows:
       vars:
         PACKAGE_NAME: "com.mohammad_azeem.foodapp"
     scripts:
-      - name: Set Android SDK location
+      - name: Set post response
         script: | 
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
-      - name: Install npm dependencies
-        script: | 
-          npm install --legacy-peer-deps
-      # - name: Install Expo CLI and eject
-      #   script: | 
-      #     npm install -g expo-cli
-      #     expo eject
-      # - name: Set up app/build.gradle
-      #   script: | 
-      #     mv ./support-files/build.gradle android/app
-      
-          
-         # react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
-   - name: Post webhook
-        script: | 
-TESTFILE=$1
-WEBHOOKURL=${URL}
-
-curl -d @$TESTFILE -H 'Content-Type: application/json' $WEBHOOKURL
-    artifacts:
-      - android/app/build/outputs/**/*.apk
+         curl -d {"status":"success"} -H 'Content-Type: application/json' \
+     https://webhook.site/19df8399-88bb-4923-b530-983a317a93e2
     publishing:
       email:
         recipients:
