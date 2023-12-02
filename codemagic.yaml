@@ -25,6 +25,12 @@ workflows:
       - name: Set Android SDK location
         script: | 
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
+      - name: app name change
+        script: | 
+          echo "$APP_NAME"
+          echo "APP_NAME --> ${APP_NAME}"
+          sed -i "" "s/mealApp/$APP_NAME/g" "android/app/src/main/res/values/strings.xml"
+        
       - name: Install npm dependencies
         script: | 
           npm install --legacy-peer-deps
